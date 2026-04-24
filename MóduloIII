@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Módulo III: Manejo Hemoterápico - Urgências e Emergências em Doença Falciforme</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#00B886",
+              "on-surface": "#101922",
+              "on-primary-fixed-variant": "#00468B",
+              "background": "#FFF5EC",
+              "error-container": "#FFDAD6",
+              "surface-tint": "#01017C",
+              "on-tertiary-container": "#002116",
+              "tertiary-fixed-dim": "#8AE6BC",
+              "primary-container": "#3616C1",
+              "surface-dim": "#E5DED6",
+              "on-tertiary": "#FFFFFF",
+              "secondary-fixed-dim": "#BEC2FF",
+              "on-tertiary-fixed-variant": "#00513B",
+              "on-secondary-fixed-variant": "#343DFF",
+              "surface-bright": "#FFFFFF",
+              "primary": "#01017C",
+              "surface-variant": "#DEE3EB",
+              "secondary": "#3616C1",
+              "primary-fixed-dim": "#ACC7FF",
+              "outline-variant": "#C4C6CF",
+              "on-primary-fixed": "#001B3E",
+              "on-primary-container": "#FFFFFF",
+              "surface-container": "#F9F1EA",
+              "on-background": "#101922",
+              "on-primary": "#FFFFFF",
+              "on-secondary-fixed": "#00006E",
+              "inverse-primary": "#D0E1FF",
+              "surface-container-highest": "#EDE5DE",
+              "secondary-container": "#E0E0FF",
+              "outline": "#74777F",
+              "on-error": "#FFFFFF",
+              "on-secondary": "#FFFFFF",
+              "inverse-surface": "#2F3033",
+              "surface-container-high": "#F3EBE4",
+              "on-tertiary-fixed": "#002116",
+              "primary-fixed": "#D6E3FF",
+              "on-error-container": "#410002",
+              "error": "#BA1A1A",
+              "on-surface-variant": "#44474E",
+              "on-secondary-container": "#00006E",
+              "surface-container-low": "#FFFBF7",
+              "surface": "#FFF5EC",
+              "tertiary-fixed": "#A6F3D4",
+              "inverse-on-surface": "#F1F0F4",
+              "secondary-fixed": "#E0E0FF",
+              "tertiary-container": "#A6F3D4",
+              "surface-container-lowest": "#FFFFFF"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      h1, h2, h3, .font-headline {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+      }
+      /* Collapsible Sidebar Styles */
+      #sidebar {
+        width: 80px;
+        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-x: hidden;
+      }
+      #sidebar:hover {
+        width: 300px;
+      }
+      .sidebar-label {
+        opacity: 0;
+        white-space: nowrap;
+        transition: opacity 0.2s ease-in-out;
+        pointer-events: none;
+      }
+      #sidebar:hover .sidebar-label {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .stagger-1 { animation-delay: 0.1s; }
+      .stagger-2 { animation-delay: 0.2s; }
+      .stagger-3 { animation-delay: 0.3s; }
+      .stagger-4 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- SideNavBar (Progress & Navigation) -->
+<aside class="fixed left-0 top-0 h-screen bg-white shadow-2xl flex flex-col py-6 z-50 border-r border-primary/5" id="sidebar">
+<!-- Brand / Toggle Header -->
+<div class="px-6 mb-8 flex items-center overflow-hidden">
+<span class="material-symbols-outlined text-primary text-3xl min-w-[32px]">menu</span>
+<span class="sidebar-label ml-4 font-headline font-extrabold text-[#01017C] text-sm tracking-tight">
+            Urgências e Emergências
+        </span>
+</div>
+<!-- Main Navigation Links (Moved from TopNav) -->
+<nav class="mb-8 px-2 space-y-1">
+<a class="flex items-center gap-4 py-3 px-4 text-primary hover:bg-primary/5 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl min-w-[24px]">grid_view</span>
+<span class="sidebar-label font-headline font-bold text-sm">Módulos</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 text-slate-500 hover:bg-primary/5 hover:text-primary rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl min-w-[24px]">folder_open</span>
+<span class="sidebar-label font-headline font-bold text-sm">Recursos</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 text-slate-500 hover:bg-primary/5 hover:text-primary rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl min-w-[24px]">dictionary</span>
+<span class="sidebar-label font-headline font-bold text-sm">Glossário</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 text-slate-500 hover:bg-primary/5 hover:text-primary rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl min-w-[24px]">help</span>
+<span class="sidebar-label font-headline font-bold text-sm">Suporte</span>
+</a>
+</nav>
+<div class="px-6 mb-8 overflow-hidden">
+<div class="flex items-center">
+<div class="min-w-[32px] flex flex-col items-center">
+<span class="material-symbols-outlined text-tertiary text-lg">potted_plant</span>
+</div>
+<div class="sidebar-label ml-4 w-full">
+<h3 class="font-headline font-bold text-primary text-[10px] uppercase tracking-wider mb-2">Progresso</h3>
+<div class="w-full bg-surface-variant h-1.5 rounded-full overflow-hidden mb-1">
+<div class="bg-tertiary h-full w-[90%] shadow-[0_0_8px_rgba(0,184,134,0.3)]"></div>
+</div>
+<p class="text-[10px] font-medium text-slate-500">90%</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1 px-2">
+<a class="flex items-center gap-4 py-3 px-4 bg-primary/5 text-[#01017C] rounded-xl border-l-4 border-[#00FFBD] font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-2xl min-w-[24px]">bloodtype</span>
+<span class="sidebar-label">Indicações e técnicas</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 text-slate-500 hover:bg-primary/5 transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-2xl min-w-[24px]">monitoring</span>
+<span class="sidebar-label">Patient Blood Management</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 text-slate-500 hover:bg-primary/5 transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-2xl min-w-[24px]">report_problem</span>
+<span class="sidebar-label">Hemovigilância</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 text-slate-500 hover:bg-primary/5 transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-2xl min-w-[24px]">description</span>
+<span class="sidebar-label">Protocolos clínicos</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 text-slate-500 hover:bg-primary/5 transition-all font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-2xl min-w-[24px]">psychology</span>
+<span class="sidebar-label">Tomada de decisão</span>
+</a>
+</nav>
+<div class="px-2 pt-6 border-t border-primary/5 space-y-1">
+<a class="flex items-center gap-4 py-3 px-4 text-slate-500 hover:bg-primary/5 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl min-w-[24px]">settings</span>
+<span class="sidebar-label text-sm">Configurações</span>
+</a>
+<a class="flex items-center gap-4 py-3 px-4 text-slate-500 hover:bg-primary/5 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined text-2xl min-w-[24px]">logout</span>
+<span class="sidebar-label text-sm">Sair</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-20 pt-8 min-h-screen transition-all duration-300">
+<div class="max-w-6xl mx-auto px-8 py-10">
+<!-- Breadcrumb & Header -->
+<header class="mb-10 opacity-0 animate-fade-in-up">
+<nav class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
+<span>Módulos</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-primary">Módulo III</span>
+</nav>
+<h1 class="text-4xl md:text-5xl font-extrabold text-primary font-headline tracking-tight leading-tight">
+                Módulo III: Manejo Hemoterápico
+            </h1>
+</header>
+<!-- Grid Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Video & Lesson Column -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Video Area -->
+<div class="opacity-0 animate-fade-in-up stagger-1 relative rounded-2xl overflow-hidden shadow-2xl bg-black aspect-video group cursor-pointer border-4 border-white transition-transform hover:scale-[1.01]">
+<img alt="A high-quality, professional medical photograph of black patients: a young man, a young woman, and a child, smiling and looking healthy, in a modern healthcare environment." class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_RvcdnrsmFXCu_1NaPygO-0W3iB977HVoIAwWxkSRJBT0rURriahewzmAzu2mJ3qg1sML6-BYXSjQLVzDFr7LBHH17KPdKS6kRiDM-SAXzuChg0pcBmfcMwJ-l7MlA_LM9ghn3Tqg7fFikVMyAEkStTYEwW0GoSR6idaT6pZbotvt72EGKCN6toBF485UrMktswhtOjpho4j9wFHAYCEt0oHGYHJcVtlQrgJTmQoHv41rV_AFyvAKqmyOkCr7eQNg2zyzOROjGpY6"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-20 h-20 bg-tertiary rounded-full flex items-center justify-center text-white shadow-[0_0_30px_rgba(0,184,134,0.5)] group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+<span class="text-white font-bold text-lg font-headline">Vídeo Aula: Indicações e Técnicas de Transfusão</span>
+</div>
+</div>
+<!-- Introduction Text Section -->
+<section class="opacity-0 animate-fade-in-up stagger-2 bg-surface-container-lowest p-10 rounded-2xl shadow-lg transition-all hover:shadow-xl">
+<h2 class="text-2xl font-bold text-primary font-headline mb-6 flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-tertiary/10 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-lg">subject</span>
+</span>
+                        Indicações e Técnicas de Transfusão
+                    </h2>
+<div class="prose prose-slate max-w-none text-on-surface-variant leading-relaxed">
+<p class="text-lg mb-4">
+                            A hemoterapia desempenha um papel vital no manejo da Doença Falciforme, mas deve ser aplicada com rigor técnico e indicações precisas. Neste tópico, exploraremos as diferenças entre transfusão simples e transfusão de troca (exsanguíneo-transfusão).
+                        </p>
+<p>
+                            Discutiremos os alvos de Hemoglobina S, o manejo da hiperviscosidade e como a decisão hemoterápica deve ser individualizada, considerando o histórico transfusional do paciente e o risco de aloimunização.
+                        </p>
+</div>
+</section>
+</div>
+<!-- Secondary Column (Bento Cards) -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Objectives Card -->
+<div class="opacity-0 animate-fade-in-up stagger-3 bg-primary text-white p-8 rounded-2xl shadow-xl relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group">
+<div class="absolute top-0 right-0 opacity-10 transition-opacity group-hover:opacity-20">
+<span class="material-symbols-outlined text-9xl">target</span>
+</div>
+<h3 class="font-headline font-extrabold text-xl mb-6 relative z-10">Objetivos de Aprendizagem</h3>
+<ul class="space-y-4 relative z-10">
+<li class="flex gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-tertiary">check_circle</span>
+                            Definir critérios para transfusão simples vs. troca.
+                        </li>
+<li class="flex gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-tertiary">check_circle</span>
+                            Compreender os princípios do PBM.
+                        </li>
+<li class="flex gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-tertiary">check_circle</span>
+                            Identificar reações transfusionais.
+                        </li>
+<li class="flex gap-3 text-sm font-medium">
+<span class="material-symbols-outlined text-tertiary">check_circle</span>
+                            Aplicar protocolos de redução de aloimunização.
+                        </li>
+</ul>
+</div>
+<!-- Material Complementar -->
+<div class="opacity-0 animate-fade-in-up stagger-4 bg-surface-container-high p-8 rounded-2xl shadow-sm border border-primary/5 transition-all duration-300 hover:shadow-md hover:border-primary/20 group">
+<h3 class="font-headline font-bold text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined">library_books</span>
+                        Material Complementar
+                    </h3>
+<div class="space-y-4">
+<a class="group/item flex items-center justify-between p-4 bg-white rounded-xl hover:shadow-md transition-all hover:bg-primary/5" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-red-500">picture_as_pdf</span>
+<span class="text-sm font-semibold text-slate-700">Protocolo de Exsanguíneo PDF</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover/item:text-primary transition-colors">download</span>
+</a>
+<a class="group/item flex items-center justify-between p-4 bg-white rounded-xl hover:shadow-md transition-all hover:bg-primary/5" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-500">table_chart</span>
+<span class="text-sm font-semibold text-slate-700">Calculadora de Troca</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover/item:text-primary transition-colors">download</span>
+</a>
+<a class="group/item flex items-center justify-between p-4 bg-white rounded-xl hover:shadow-md transition-all hover:bg-primary/5" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-500">link</span>
+<span class="text-sm font-semibold text-slate-700">Diretrizes da Hemorrede</span>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover/item:text-primary transition-colors">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Support Card -->
+<div class="opacity-0 animate-fade-in-up stagger-4 glass-card p-6 rounded-2xl border border-white/50 shadow-xl transition-all hover:shadow-2xl">
+<p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Dúvidas?</p>
+<p class="text-sm text-slate-600 mb-4">Nossa equipe de especialistas está disponível para suporte pedagógico.</p>
+<button class="w-full py-2 px-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all text-sm font-headline">
+                        Falar com Suporte
+                    </button>
+</div>
+</div>
+</div>
+<!-- Footer Navigation -->
+<footer class="mt-16 pt-8 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-6 opacity-0 animate-fade-in-up stagger-4">
+<div class="flex gap-4">
+<button class="flex items-center gap-2 py-3 px-6 bg-surface-container-high text-primary font-bold rounded-xl hover:bg-surface-variant transition-all font-headline">
+<span class="material-symbols-outlined">chevron_left</span>
+                    Tópico Anterior
+                </button>
+<button class="flex items-center gap-2 py-3 px-6 bg-surface-container-high text-primary font-bold rounded-xl hover:bg-surface-variant transition-all font-headline">
+<span class="material-symbols-outlined">download</span>
+                    Materiais
+                </button>
+</div>
+<button class="flex items-center gap-3 py-4 px-10 bg-tertiary text-white font-extrabold rounded-2xl shadow-xl shadow-tertiary/20 hover:scale-105 active:scale-95 transition-all group font-headline">
+                Próximo Tópico: Hemovigilância
+                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</footer>
+</div>
+</main>
+<!-- Decorative Canvas Elements -->
+<div class="fixed top-[20%] right-[-5%] w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="fixed bottom-0 left-72 w-[300px] h-[300px] bg-tertiary/5 rounded-full blur-[80px] pointer-events-none"></div>
+</body></html>
