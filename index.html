@@ -100,9 +100,7 @@
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-accent selection:text-white">
 <!-- Menu Toggle Button -->
-<button class="fixed top-6 left-6 z-[100] size-12 bg-primary text-white rounded-xl shadow-lg flex items-center justify-center hover:bg-secondary transition-all active:scale-95" id="menu-toggle">
-<span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
-</button>
+<button class="fixed top-6 left-6 z-[100] size-12 bg-primary text-white rounded-xl shadow-lg flex items-center justify-center hover:bg-secondary transition-all active:scale-95" id="menu-toggle"><span class="material-symbols-outlined">menu</span></button>
 <!-- Sidebar Overlay -->
 <div class="fixed inset-0 bg-primary/40 backdrop-blur-sm z-[90] opacity-0 pointer-events-none transition-opacity duration-400" id="side-menu-overlay"></div>
 <aside class="fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-[95] closed flex flex-col p-8 overflow-y-auto custom-scrollbar" id="side-menu">
@@ -165,14 +163,14 @@
 <div class="relative flex justify-center lg:justify-end lg:-translate-x-12">
 <div class="absolute inset-0 bg-accent/5 rounded-full blur-3xl -z-10 animate-pulse"></div>
 <!-- Instructional Floating Icons -->
-<div class="absolute -left-4 top-1/4 size-24 md:size-32 bg-white rounded-3xl shadow-2xl p-4 animate-float-alt z-20 border border-slate-100/50 backdrop-blur-sm">
+<div class="absolute -left-4 top-1/4 size-24 md:size-32 animate-float-alt z-20">
 <img alt="Recurso 1" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0ugs1XT_eddBZ82i6_dqjEU5yer90DIDrZeqIWFZ6S0zeZCF3rz1AQ8vlYMzbU3u5pxWIM4BKBsx5jGu7sRQc4bU6U6fokvzMCZn8ZTt7zwtJjLlpS1rEaRzz9RPY0SK60FHq3kXzH_TLHCEfBmJTSMuOsvYXPSHsJVPut933VoH56rdXhf8XluE4JErXFbizH3yH2F7pzNGJAb8yj_gBXm92X3XFN8DzqleuqGB4ZnXllHq3ZsPS10tDp5r1IwbiQvdlZ7vS1qETbI"/>
 </div>
-<div class="absolute -right-4 bottom-1/4 size-24 md:size-32 bg-white rounded-3xl shadow-2xl p-4 animate-float-slow z-20 border border-slate-100/50 backdrop-blur-sm">
+<div class="absolute -right-4 bottom-1/4 size-24 md:size-32 animate-float-slow z-20 -right-8 bottom-[15%]">
 <img alt="Recurso 2" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/ADBb0uji5Rr60lcUhos_E4Rom3lk9l0T9EvG5uRZDbJYXAaoqufxdmt4cMblrbskSTRcrrbb4-Tgiy-6WUDOjf_ObfpaL6XfWrERuzjXMJqZaNR_QkKYdZ39jERTqFNXZPVsmXgJzDLnScDUL3yo1aIDtwE81Cr3ZGHbWODjGPLQigtEHDCXxf5p-Qm5mk-pHTh6PFqc3j-MhzA4o-9dXxZ7bO6uctsI_XcIRHA-XX1JK_b0oxyKud9-jqCe6XeoeQ9q7RqXHe6jlV7VbvA"/>
 </div>
 <!-- Main Logo -->
-<div class="logo-container animate-float w-full max-w-md lg:max-w-lg drop-shadow-[0_35px_35px_rgba(0,0,0,0.15)] max-w-[320px] lg:max-w-[400px]" id="hero-logo">
+<div class="logo-container animate-float w-full max-w-md lg:max-w-lg drop-shadow-[0_35px_35px_rgba(0,0,0,0.15)] max-w-[320px] lg:max-w-[400px] lg:-translate-x-[320px]" id="hero-logo">
 <img alt="Logotipo Hemácia" class="w-full h-auto" src="https://lh3.googleusercontent.com/aida/ADBb0uhURd5kWRBy5JeEr96RUgpHIcjSP0FiLen1Pb9OJrDYVxfjlK3STIGcYRoLFf9ampFI8AKc7t5fB3V2qJJGEpugZMV9LEJ3IBucnaPSCUGQF2hTFLE0yOvuMFREjIvdsbTOWaoR9q2DDoacCHpgUtUSBh5P_QAoT9DJk2tUt06dY6miUjs3NL1dAP7Mpizwp9Jy5rsAdExJJyLaCq3Q_UdLP7dm-JtwdZoyJ1JvsQc8Omm46hzVbIUICFESulU9LNs8FYEhn2N5zCU"/>
 </div>
 </div>
@@ -285,6 +283,7 @@
 </div>
 </section>
 </main>
+<!-- Floating Widgets -->
 <!-- Footer -->
 <footer class="bg-primary text-white py-20 px-6 md:px-20 mt-32">
 <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
